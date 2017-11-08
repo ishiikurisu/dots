@@ -9,15 +9,17 @@ function game_view.drawBoard(board)
     love.graphics.setColor(0, 0, 0)
 
     -- Drawing dots
-    for i, dot in pairs(board.dots) do
+    for i, dot in ipairs(board.dots) do
         x = dot.x
         y = dot.y
-        if i == board.current then
+        if i == (board.current+1) then
             love.graphics.setColor(255, 0, 0)
+        elseif i == board.current then
+            love.graphics.setColor(0, 0, 255)
         else
             love.graphics.setColor(0, 0, 0)
         end
-        love.graphics.ellipse("fill", x, y, 5, 5)
+        love.graphics.ellipse("fill", x, y, util.radius, util.radius)
     end
 
     -- Drawing lines

@@ -25,14 +25,14 @@ function game_controller.new()
     -- Updates the game state based on the user's actions
     self.update = function(dt)
         for _, action in pairs(self.actions) do
-            self.board.clickOn(action.x, action.y)
+            self.board = self.board.clickOn(action.x, action.y)
         end
         self.actions = { }
+        return self
     end
 
     -- Draws relevant stuff to screen
     self.draw = function()
-        self.view.draw(self)
         self.view.drawBoard(self.board)
     end
 
