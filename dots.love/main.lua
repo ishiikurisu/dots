@@ -9,7 +9,7 @@ function love.mousepressed(x, y, button, istouch)
     current_controller.press(x, y)
 end
 
-function update(dt)
+function love.update(dt)
     current_controller = current_controller.update(dt)
 end
 
