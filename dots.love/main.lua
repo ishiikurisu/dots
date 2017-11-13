@@ -1,4 +1,4 @@
-game_start = require "controller/game_controller"
+game_start = require "controller/menu_controller"
 util = require "util"
 
 function love.load()
