@@ -27,6 +27,9 @@ function game_controller.new()
         for _, action in pairs(self.actions) do
             self.board = self.board.clickOn(action.x, action.y)
         end
+        if self.board.finished then
+            return game_start.new()
+        end
         self.actions = { }
         return self
     end

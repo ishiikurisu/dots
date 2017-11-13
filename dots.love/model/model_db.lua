@@ -3,7 +3,7 @@ local model_db = { }
 -- TODO Actually implement this function
 function model_db.load(src)
     local outlet = { }
-    local ndots = 50
+    local ndots = 10
 
     math.randomseed(os.time())
     for i = 1, ndots do

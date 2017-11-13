@@ -6,7 +6,8 @@ function model_board.construct(src)
     local self = { }
 
     self.dots = model_db.load(src)
-    self.current = 1
+    self.current = 0
+    self.finished = false
 
     return self
 end
@@ -25,6 +26,8 @@ function model_board.new(src)
             if miss <= util.radius then
                 self.current = self.current + 1
             end
+        elseif self.current == #self.dots then
+            self.finished = true
         end
 
         return self

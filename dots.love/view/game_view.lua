@@ -14,8 +14,6 @@ function game_view.drawBoard(board)
         y = dot.y
         if i == (board.current+1) then
             love.graphics.setColor(255, 0, 0)
-        elseif i == board.current then
-            love.graphics.setColor(0, 0, 255)
         else
             love.graphics.setColor(0, 0, 0)
         end
@@ -36,6 +34,11 @@ function game_view.drawBoard(board)
             local current = board.dots[i]
             love.graphics.line(previous.x, previous.y, current.x, current.y)
         end
+    end
+    if (board.current > 0) and (board.current < #board.dots) then
+        local current = board.dots[board.current]
+        love.graphics.setColor(0, 0, 0)
+        love.graphics.line(love.mouse.getX(), love.mouse.getY(), current.x, current.y)
     end
 end
 
