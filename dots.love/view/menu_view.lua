@@ -8,8 +8,12 @@ end
 function menu_view.new()
     local self = menu_view.construct()
 
-    self.draw = function()
+    self.drawOptions = function(options)
         love.graphics.setBackgroundColor(255, 255, 255)
+        love.graphics.setColor(0, 0, 0)
+        for i, option in pairs(options) do
+            love.graphics.print(option, 50, 50*i)
+        end
     end
 
     return self

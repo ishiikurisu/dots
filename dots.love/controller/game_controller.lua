@@ -3,19 +3,19 @@ local game_view = require "view/game_view"
 local game_controller = { }
 
 -- Constructs a new game controller
-function game_controller.construct()
+function game_controller.construct(src)
     local self = { }
 
     self.view = game_view.new()
-    self.board = model_board.new('test.txt')
+    self.board = model_board.new(src)
     self.actions = { }
 
     return self
 end
 
 -- Creates a new controller
-function game_controller.new()
-    local self = game_controller.construct()
+function game_controller.new(src)
+    local self = game_controller.construct(src)
 
     -- Queues mouse presses for updates
     self.press = function(x, y)
