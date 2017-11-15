@@ -23,8 +23,11 @@ function menu_controller.new()
 
     self.update = function(dt)
         for _, action in pairs(self.actions) do
-            -- body...
-            return game_controller.new('test.txt')
+            for i, option in pairs(self.options) do
+                if self.view.clickedSomething(i, action) then
+                    return game_controller.new(option)
+                end
+            end
         end
         self.actions = { }
         return self
