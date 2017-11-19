@@ -2,6 +2,10 @@ local menu_view = { }
 
 function menu_view.construct()
     local self = { }
+
+    self.bigFont = love.graphics.setNewFont(26)
+    self.smallFont = love.graphics.setNewFont(14)
+
     return self
 end
 
@@ -23,8 +27,15 @@ function menu_view.new()
     end
 
     self.drawOptions = function(options)
-        love.graphics.setBackgroundColor(255, 255, 255)
-        love.graphics.setColor(0, 0, 0)
+        love.graphics.setBackgroundColor(253, 226, 255)
+
+        love.graphics.setFont(self.bigFont)
+        love.graphics.setColor(158, 14, 49)
+        love.graphics.print('Follow the dots!', 300, 50)
+        love.graphics.setFont(self.smallFont)
+        love.graphics.print('@ishiikurisu', 300, 75)
+
+        love.graphics.setColor(29, 30, 44)
         for i, option in pairs(options) do
             love.graphics.print(option, 50, 50*i)
         end
