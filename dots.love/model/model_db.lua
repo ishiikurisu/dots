@@ -1,22 +1,15 @@
 local model_db = { }
 
--- Gets the data folder path.s
-function model_db.getSource()
-    local cwd = love.filesystem.getWorkingDirectory()
-    return cwd .. '/data'
-end
-
 -- Lists all available options of boards, as described in the
 -- `data/master.txt` file.
 function model_db.list()
-    local dataFolder = model_db.getSource()
-    local target = string.gsub(dataFolder .. '/master.txt', '/', '\\')
+    local target = util.getDataFolder() .. '\\master.txt'
     return util.linesFrom(target)
 end
 
 -- Loads the given option from the data folder.
 function model_db.load(option)
-    local src = string.gsub(model_db.getSource() .. '/' .. option .. '.txt', '/', '\\')
+    local src = util.getDataFolder() .. '\\' .. option .. '.txt'
     local lines = util.linesFrom(src)
     local outlet = { }
     local ndots = 0

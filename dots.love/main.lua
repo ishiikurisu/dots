@@ -2,6 +2,7 @@ game_start = require "controller/menu_controller"
 util = require "util"
 
 function love.load()
+    -- TODO Set new font
     current_controller = game_start.new()
 end
 

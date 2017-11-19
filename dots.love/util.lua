@@ -6,6 +6,16 @@ end
 
 util.radius = 5
 
+-- gets source directory
+function util.getSourceDirectory()
+    return love.filesystem.getWorkingDirectory()
+end
+
+function util.getDataFolder()
+    local cwd = util.getSourceDirectory()
+    return string.gsub(cwd .. '/data', '/', '\\')
+end
+
 -- see if the file exists
 function util.fileExists(file)
     local f = io.open(file, "rb")
