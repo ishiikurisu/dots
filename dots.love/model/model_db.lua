@@ -16,7 +16,7 @@ end
 
 -- Loads the given option from the data folder.
 function model_db.load(option)
-    local src = string.gsub(model_db.getSource() .. '/' .. option, '/', '\\')
+    local src = string.gsub(model_db.getSource() .. '/' .. option .. '.txt', '/', '\\')
     local lines = util.linesFrom(src)
     local outlet = { }
     local ndots = 0

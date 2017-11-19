@@ -1,2 +1,2 @@
-cat.txt
-heart.txt
+cat
+heart
