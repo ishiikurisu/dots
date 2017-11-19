@@ -11,6 +11,7 @@ function util.getSourceDirectory()
     return love.filesystem.getWorkingDirectory()
 end
 
+-- gets data directory path
 function util.getDataFolder()
     local cwd = util.getSourceDirectory()
     return string.gsub(cwd .. '/data', '/', '\\')
