@@ -3,8 +3,8 @@ local menu_view = { }
 function menu_view.construct()
     local self = { }
 
-    self.bigFont = love.graphics.setNewFont(26)
-    self.smallFont = love.graphics.setNewFont(14)
+    self.bigFont = love.graphics.newFont("marker.ttf ", 20)
+    self.smallFont = love.graphics.newFont("marker.ttf   ", 14)
 
     return self
 end
